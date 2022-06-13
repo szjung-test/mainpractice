@@ -6,7 +6,7 @@ git push -u origin master
 
 6월 9일 오전 배운 내용
 1. docker 서버에서 안쓰는 컨테이너 지우기
-    ```
+    ```bash
     $ cd newworld #[내가 지우고자하는 컨테이너]
     $ make rm
     $ make rmi
@@ -55,26 +55,32 @@ git push -u origin master
 
 1. shift + Delete = 영구 삭제
 
-2. Dockerfile 에 opencv 설치 apt
-RUN apt-get update && apt-get install -y sudo
-RUN apt-get install -y libgl1-mesa-glx
+2. Dockerfile 에 opencv 오류해결 apt
+    ``` 
+    RUN apt-get update && apt-get install -y sudo
+    RUN apt-get install -y libgl1-mesa-glx
+    ```
 
-2.1 기존 도커 컨테이너 삭제후 다시 생성
-make rm
-make rmi
-make build
-make run
+3. 기존 도커 컨테이너 삭제후 다시 생성
+    ```bash
+    make rm
+    make rmi
+    make build
+    make run
+    ```
 
 3. newworld 컨테이너에서 업데이트
-pip install --upgrade pip
-pip install torch torchvision sklearn numpy seaborn opencv-python
+    ```
+    pip install --upgrade pip
+    pip install torch torchvision sklearn numpy seaborn opencv-python
+    ```
 
 컨테이너에 설정 다시 완료!
 
 오늘 설치한 것
 1. VirtualBox에 Ubuntu server 다운받고 Docker 설치
 
-```
+```bash
 sudo apt-get update && upgrade
 sudo apt-get install ca-certificates \ curl \ gnupg \ lsb-release
 
@@ -90,14 +96,14 @@ ifconfig
  1. git pull origin master
  - origin이 원격저장소 이름이 되고 master 브랜치로 가져온다는 뜻
 
- 2. ssh - keygen
- ssh 키가 저장되는 디렉터리는 .ssh 디렉터리
+ 2. ssh-keygen
+ - ssh 키가 저장되는 디렉터리는 .ssh 디렉터리
 
     - id-rsa =  프라이빗키
     - id-rsa.pub = 퍼블릭키                       
 
 
-3. N/.ssh. 디렉터리는 홈 디렉터리 하위에 만들어짐
+ 3. N/.ssh. 디렉터리는 홈 디렉터리 하위에 만들어짐
 
-4. git pull 원격 브랜치 정보가져오기
+ 4. git pull 원격 브랜치 정보가져오기
 
