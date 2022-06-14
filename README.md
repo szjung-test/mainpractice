@@ -107,3 +107,52 @@ ifconfig
 
  4. git pull 원격 브랜치 정보가져오기
 
+6월 14일 꿀팁
+
+git branch 활용 관리법
+
+[HEAD] 해당 브랜치의 마지막 커밋이 해당 부분
+
+예시)
+```bash
+Toy Story@DESKTOP-O3V1LK3 MINGW64 ~/Documents/git-test (feat/b)
+$ git log
+commit 6a13f83171fa4a0af52170fb256cba034bb2c4f2 (HEAD -> main, origin/main, origin/HEAD)
+Merge: 1b7fde2 36d7d66
+Author: szjung-test <93111772+szjung-test@users.noreply.github.com>
+Date:   Tue Jun 14 15:09:11 2022 +0900
+
+    Merge pull request #1 from szjung-test/feature/comment
+
+    댓글 기능 추가
+```
+
+checkout 은 브랜치를 이동하는 명령어
+
+checkout -b
+다른 브랜치 HEAD 추가하기
+
+예시)
+```
+git checkout -b "feature-layout"
+```
+
+HEAD -> feature-layout, origin/main, origin/HEAD, main
+
+```Toy Story@DESKTOP-O3V1LK3 MINGW64 ~/Documents/git-test (main)
+$ git checkout -b "feature-layout"
+Switched to a new branch 'feature-layout'
+
+Toy Story@DESKTOP-O3V1LK3 MINGW64 ~/Documents/git-test (feature-layout)
+$ git log
+commit 6a13f83171fa4a0af52170fb256cba034bb2c4f2 (HEAD -> feature-layout, origin/main, origin/HEAD, main)
+Merge: 1b7fde2 36d7d66
+Author: szjung-test <93111772+szjung-test@users.noreply.github.com>
+Date:   Tue Jun 14 15:09:11 2022 +0900
+
+    Merge pull request #1 from szjung-test/feature/comment
+
+    댓글 기능 추가
+```
+Merge 머지 
+브랜치와 브랜치를 합치는 명령어
