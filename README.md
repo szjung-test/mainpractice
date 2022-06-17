@@ -169,3 +169,18 @@ Merge 머지
  - Adam() 은 SGD의 변형 함수 이다.
  - nn.MSELoss() : 두 개의 같은 크기 행렬을 받아 각 자리의 차이에 제곱해서 평균 객체 생성 
  - criterion : (decoded - y)^2
+
+
+6월 17일 꿀팁
+
+- Classification : 입력으로 주어진 이미지 안에 어떤 object가 있는 지에 따라 class(label)을 구분하는 행위
+- Localization : 이미지 안의 object가 어느 위치에 있는지 정보를 출력
+
+- Semantic segmentation : classification + Localization
+
+- Instance segmentation : 같은 class여도 서로 다른 instance들을 구분한다. 즉 object detection처럼 이뤄진다.
+    - object segmentaion : 서로 다른 object가 섞여 있어도 찾을 수 있음, 사진에 보이는 해당 object 들을 각각 골라냄
+
+
+
+출처 : https://velog.io/@cha-suyeon/%EB%94%A5%EB%9F%AC%EB%8B%9D-Object-Detection-%EA%B0%9C%EB%85%90%EA%B3%BC-%EC%9A%A9%EC%96%B4-%EC%A0%95%EB%A6%AC
