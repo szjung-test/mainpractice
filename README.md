@@ -184,3 +184,8 @@ Merge 머지
 
 
 출처 : https://velog.io/@cha-suyeon/%EB%94%A5%EB%9F%AC%EB%8B%9D-Object-Detection-%EA%B0%9C%EB%85%90%EA%B3%BC-%EC%9A%A9%EC%96%B4-%EC%A0%95%EB%A6%AC
+
+6월 21일 꿀팁
+
+- 브라우저에서 방금 닫은 페이지 복구 방법 : ctrl + shift + t
+- 우클릭 불가능할 때 사용방법 : f12 , f1, setting :disable javascript 체크
