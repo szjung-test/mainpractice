@@ -192,8 +192,7 @@ Merge 머지
 
 
 6월 23일 꿀팁
-- 딥러닝 분야별 State-of-the-art(SOTA) 확인 가능 사이트
-- https://paperswithcode.com/sota?fbclid=IwAR16wLSr-BAcl-eZAwMVIHdsmpgBF6dN4ETR5kRGg02f_5xBBOlN6uMapo4
+- 딥러닝 분야별 State-of-the-art(SOTA) 확인 가능 사이트 [[site]](https://paperswithcode.com/sota?fbclid=IwAR16wLSr-BAcl-eZAwMVIHdsmpgBF6dN4ETR5kRGg02f_5xBBOlN6uMapo4)
 
 - Pose Estimation 분야가 굉장히 요즘 각광 받는 분야
 - 크게 Top-down 방식과 Botton-up 방식으로 크게 나뉨
