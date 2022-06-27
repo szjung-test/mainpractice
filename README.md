@@ -196,3 +196,9 @@ Merge 머지
 
 - Pose Estimation 분야가 굉장히 요즘 각광 받는 분야
 - 크게 Top-down 방식과 Botton-up 방식으로 크게 나뉨
+
+6월 27일 꿀팁
+- RNN은 시계열 데이터의 정보를 받아 전체 내용을 학습한다.
+- 순차적 데이터의 흐름을 모두 내포
+- RNN은 시계열 데이터의 정보를 하나씩 입력받을 때마다 입력된 벡터들을 종합해 은닉 벡터를 만듬
+- LSTM, GRU, language modeling, text sentiment analysis, machine translation
