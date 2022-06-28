@@ -202,3 +202,18 @@ Merge 머지
 - 순차적 데이터의 흐름을 모두 내포
 - RNN은 시계열 데이터의 정보를 하나씩 입력받을 때마다 입력된 벡터들을 종합해 은닉 벡터를 만듬
 - LSTM, GRU, language modeling, text sentiment analysis, machine translation
+
+6월 28일 꿀팁
+### CNN모델
+- Conv - Activation - pool
+- stride - 픽셀 움직이고 작게 압축 시킨다 
+-  $N-F\over S$ + 1
+- feature map - 컨볼루션 거친 이미지의 특징 추출
+- Pooling -  필터가 지나갈 때마다 픽셀 묶음
+    - 평균 풀링
+    - 최댓값 풀링
+
+
+### Alex-Net
+- Conv - Normalize - Activation - Pool
+ 
