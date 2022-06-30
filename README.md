@@ -228,3 +228,7 @@ Merge 머지
 - 은닉벡터 정의 : __init__state()
 - forward 함수 정의 : self.gru(배치사이즈, 입력 x 길이, 숨겨진 차원) 3d 텐서
 - train, evaluate
+
+6월 30일 꿀팁
+- 인코더 : 원문의 내용을 학습하는 RNN, 원문의 뜻과 내용을 압축하여 문맥 벡터(context vector)
+- 디코더 : 인코더의 내용 벡터 입력 받아 토큰들을 차례대로 예측
