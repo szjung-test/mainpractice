@@ -198,6 +198,7 @@ Merge 머지
 - 크게 Top-down 방식과 Botton-up 방식으로 크게 나뉨
 
 6월 27일 꿀팁
+### RNN
 - RNN은 시계열 데이터의 정보를 받아 전체 내용을 학습한다.
 - 순차적 데이터의 흐름을 모두 내포
 - RNN은 시계열 데이터의 정보를 하나씩 입력받을 때마다 입력된 벡터들을 종합해 은닉 벡터를 만듬
@@ -216,4 +217,14 @@ Merge 머지
 
 ### Alex-Net
 - Conv - Normalize - Activation - Pool
- 
+
+
+6월 29일 꿀팁
+- 응용 RNN
+     - LSTM : 기울기 소실 문제 해결, sequential 데이터 처리
+     - GRU : RNN 을 포함하는 신경망, 파이토치의 nn.Module 상속 받음
+
+- RNN은 입력이 너무 길어지면 gradient explosion, vanishing gradient 발생
+- 은닉벡터 정의 : __init__state()
+- forward 함수 정의 : self.gru(배치사이즈, 입력 x 길이, 숨겨진 차원) 3d 텐서
+- train, evaluate
