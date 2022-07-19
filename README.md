@@ -259,7 +259,20 @@ Merge 머지
 - 3*3 작은 필터 모든 Conv 레이어 사용
 - 작은 필터를 사용함으로 더 많은 ReLU함수 사용 가능, 더 많은 비선형성 확보
 
-7월 4일
+### 7월 4일
 - 함수나 라이브러리를 더블클릭하고 F12 누르면 클래스가 선언된 부분을 확인 할 수 있음
 - 라이브러리는 클래스로 이루어져있으므로 그 작동원리를 확인 할 수 있음
 - opencl 병렬 컴퓨팅에 이용
+
+
+### 7월 19일
+- FastAPI main.py 실행 오류
+
+```
+szjung@esp:/workspace/newworld/FastAPI$ uvicorn main:app --reload
+INFO:     Will watch for changes in these directories: ['/workspace/newworld/FastAPI']
+ERROR:    [Errno 98] Address already in use
+```
+
+- 해결 방법 : 컨테이너에서 디폴트 포터가 이미 사용중이여서 안되기 때문에 
+- uvicorn main:app --reload --host 0.0.0.0 --port 6565 이렇게 뒤에 안쓰는 포트 번호를 사용해준다.
