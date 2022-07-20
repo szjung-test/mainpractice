@@ -281,3 +281,5 @@ ERROR:    [Errno 98] Address already in use
 - 도커 로그 확인하는 명령어
 - 도커 make up 파일 실행하고 로그를 확인하고 싶을 때 쓰는 명령어
 - docker logs -f --tail 30 apisz1(확인하고 싶은 컨테이너)
+
+- iterm2 를 이용해서 FastAPI 폴더를 만들고 실습해본다.
