@@ -283,3 +283,10 @@ ERROR:    [Errno 98] Address already in use
 - docker logs -f --tail 30 apisz1(확인하고 싶은 컨테이너)
 
 - iterm2 를 이용해서 FastAPI 폴더를 만들고 실습해본다.
+
+### 7월 25일
+- ssh 사용
+- Django 는  MVT 모델이다.(Model, View, Template)
+- Template = main.html (템플릿, HTML, CSS)
+- View = views.py, urls.py
+- url -> views.py -> templates / main.html
