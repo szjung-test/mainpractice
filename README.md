@@ -290,3 +290,13 @@ ERROR:    [Errno 98] Address already in use
 - Template = main.html (템플릿, HTML, CSS)
 - View = views.py, urls.py
 - url -> views.py -> templates / main.html
+
+### 7월 26일
+- Batch Normalization
+    - Gradient vanishing/exploding 보완하기 위해 만들어짐
+    - squash : sigmoid 이용
+    - Training : mini batch 대신 moving averages
+    - Higher learning rate : U 에 대해선 변화 없고, 오히려 gradient 감소
+    - CNN에서 BN Input 더한다.
+    - BN이 주는 효과 Local optimum 문제 발생 가능성 줄이는 효과
+    - x,y 축 도메인을 [0,1] 범위로 변환하고 정규화를 한다.
