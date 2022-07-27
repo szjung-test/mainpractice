@@ -357,3 +357,11 @@ $ pip install -r requirements.txt
 python3
 import this
 ```
+
+### 프레임워크 VS 라이브러리
+- 프레임워크
+    - 내코드 > Django > Serving
+    - 장고가 서빙의 주체 내코드를 불러서 장고에서 구현함
+- 라이브러리
+    - 라이브러리 > 내코드 > Serving
+    - 내코드가 서빙의 주체 내코드를 라이브러리와 함께 구현함
