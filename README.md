@@ -304,7 +304,7 @@ ERROR:    [Errno 98] Address already in use
 ### 7월 27일
 - Django 스터디 꿀팁!
 - 가상환경이 필요한 이유? : 여러 패키지들을 한데 모아서 관리하기 위해 사용
-- 1. Virtualenv
+#### 1. Virtualenv
 ```
 $ pip install virtualenv
 ```
@@ -321,3 +321,25 @@ $ source project_env/bin/activate
 ```
 deactivate
 ```
+
+#### 2. venv
+- 파이썬 3.4 부터는 venv라는 패키지가 기본으로 포함되어 있어서 따로 virtualenv 설치하지 않아도 가상환경 이용 가능
+```
+$ python -m venv project_env
+```
+- 가상환경 활성화 시키는 방법은 virtualenv 와 동일
+```
+$ project_env/scripts/activate
+```
+
+#### 3. 가상환경에서의 패키지 관리
+- 로컬에서 가상환경을 활성화시키고 필요한 모든 패키지들이 설치되었으면, 어느 환경에서든 같은 패키지들이 한 묶음으로 설치
+- requirements.txt 만들어 주는 것이 좋음
+```
+$ pip freeze > requirements.txt
+```
+- 원격 서버에서 이파일을 이용해 일괄 설치하는 방법
+```
+$ pip install -r requirements.txt
+```
+
