@@ -300,3 +300,24 @@ ERROR:    [Errno 98] Address already in use
     - CNN에서 BN Input 더한다.
     - BN이 주는 효과 Local optimum 문제 발생 가능성 줄이는 효과
     - x,y 축 도메인을 [0,1] 범위로 변환하고 정규화를 한다.
+
+### 7월 27일
+- Django 스터디 꿀팁!
+- 가상환경이 필요한 이유? : 여러 패키지들을 한데 모아서 관리하기 위해 사용
+- 1. Virtualenv
+```
+$ pip install virtualenv
+```
+- 설치후
+```
+$ virtualenv project_env
+```
+- 가상환경에 필요한 파일들이 현재 위치 아래의 project_env 라는 디렉토리 안에 설치 되는 식
+- 만들어진 가상환경을 활성화하려면 activate 명령을 입력한다
+```
+$ source project_env/bin/activate
+```
+- 가상환경에서 빠져나오는법
+```
+deactivate
+```
