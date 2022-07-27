@@ -343,3 +343,17 @@ $ pip freeze > requirements.txt
 $ pip install -r requirements.txt
 ```
 
+### Django 컴포넌트
+- users
+- other services
+- web server
+- URLS.py 
+- Views
+- models
+- template
+
+### python 작성시 중요한 방법
+```
+python3
+import this
+```
