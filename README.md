@@ -352,7 +352,8 @@ $ pip install -r requirements.txt
 - models
 - template
 
-### python 작성시 중요한 방법
+### Zen of python
+- 파이썬이 추구하는 철학
 ```
 python3
 import this
@@ -365,3 +366,8 @@ import this
 - 라이브러리
     - 라이브러리 > 내코드 > Serving
     - 내코드가 서빙의 주체 내코드를 라이브러리와 함께 구현함
+
+### 7월 28일
+- SRGAN 스터디
+- 기존 PSNR과 MSE는 pixel wise image 차이 기반으로 정의 되어 있어서 high texture datail솨 같은 지각적(perceptual)차이를 잡는데 한계 존재
+- But SR GAN 모델을 돌리고 MOS Test를 한 결과 ResNet보다 우수한 결과 도출
