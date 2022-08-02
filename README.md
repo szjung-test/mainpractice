@@ -436,3 +436,15 @@ import this
 - 요구사항 분류
 
 - 요구사항은 크게 기능적 측면과 관리적 측면으로 분류, 일반적으로 기능적 측면의 요구사항 분류가 많이 활용
+
+### 8월 2일
+- Classification : 이미지를 분류하는 것으로 해당 이미지 내의 객체가 무엇인지 알려주는 것
+- 분류 문제는 분류할 것인지 하나인지 여러가지인지에 따라 Single Label Classification, Multi Label Classification 나뉨
+- 1) Single Label Classification: 분류해야할 객체가 여러 class 중 (3개 이상) 한 가지인 경우를 Single Label Classification 혹은 Multi Class Classification
+- 2) Multi Label Classification: 분류해야할 객체가 여러 class 중 한 가지 이상인 경우 Multi Label Classification
+
+- Object Detection : 이미지나 영상 객체(Objects)가 무엇인지 분류하고 객체의 위치까지 인식해주는 기술로 분류와 위치인식이 동시에 가능
+- 사용하는 ML 프레임워크 : Tensorflow, Pytorch
+- zero-shot learning: 처음보는 데이터를 분류 가능하도록 학습하는 것
+
+### 8월 3일
