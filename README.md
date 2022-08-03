@@ -448,3 +448,20 @@ import this
 - zero-shot learning: 처음보는 데이터를 분류 가능하도록 학습하는 것
 
 ### 8월 3일
+- 컴퓨터 꿀팁
+    - 실수로 창 닫았을 때
+    - window : ctrl + shift + t
+    - mac : command + shift + t
+- SCP란?
+- ssh 원격 접속 프로토콜 기반으로 한 SecureCopy(scp)의 약자로서 원격지에 있는 파일과 디렉터리를 보내거나 가져올때 사용하는 파일 전송 프로토콜이다.
+- 1. 단일 파일 원격지로 보낼때
+    - 구문: #scp[옵션][파일명][원격지_id]@[원격지_ip]:[받는위치]
+    - 예시: #scp testfile2root@192.168.159.129:/tmp/testclient
+
+- 2. 복수의 파일을 원격지로 보낼때
+    - 구문: #scp[옵션][파일명1][파일명2][원격지_id]@[원격지_ip]:[받는위치]
+    - 예시: #scp testfile1 testfile2 root@192.168.159.129:/tmp/testclient
+
+- 3. 여러 파일을 포함하고 있는 디렉터리를 원격지로 보낼때(-r옵션 사용)
+    - 구문: #scp[옵션][디렉토리이름][원격지_id]@[원격지_ip]:[보낼경로]
+    - 예시: #scp -r testgo root@192.168.159.129:/tmp/testclient
