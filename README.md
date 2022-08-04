@@ -465,3 +465,12 @@ import this
 - 3. 여러 파일을 포함하고 있는 디렉터리를 원격지로 보낼때(-r옵션 사용)
     - 구문: #scp[옵션][디렉토리이름][원격지_id]@[원격지_ip]:[보낼경로]
     - 예시: #scp -r testgo root@192.168.159.129:/tmp/testclient
+
+- SRGAN 따라하기
+- 출처 : https://velog.io/@hyun-wle/SRGAN-%EB%94%B0%EB%9D%BC%ED%95%98%EA%B8%B0
+- DIV2K 데이터셋으로 SRGAN 학습 완료
+- epoch 100번 돌려서 학습해봄
+- HR보다는 화질이 좋지는 않지만 LR보다는 화질이 훨씬 좋아졌다.
+
+- 파이토치 CUDA
+- https://pytorch.org/get-started/locally/
