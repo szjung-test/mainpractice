@@ -474,3 +474,38 @@ import this
 
 - 파이토치 CUDA
 - https://pytorch.org/get-started/locally/
+
+8월 5일
+- L1,L2, Loss 값이란 무엇인지 정리
+- 우선 Norm을 알아야한다.
+- Norm = 절대값이 아니라, 많은 Norm 중 하나가 절대값이다. |-1|=1 dlfjstlr
+- 절댓값이 아니라 벡터의크기 이기도 하다.|(1,2)|
+### Norm 이란?
+- 수학적 정의는 복잡하지만 어떤 값의 크기를 계산하여, 비교가 가능하게하는 함수
+
+![image](https://user-images.githubusercontent.com/93111772/183002746-2c4803de-c1de-4c68-8002-d69a9635458b.png)
+
+### L1 Norm(Mahattan Distance, Taxicab geometry)
+- 위 그림처럼 L1은 두개의 벡터를 빼고, 절대값을 취한 뒤, 합한 것이다. 예를 들면, x=(1,2,3), y=(-1,2,4) 라면 d(x,y)=|1-(-1)|+|2-2|+|3-4|=2+0+1=3 이다.
+
+### L2 Norm(Euclidean Distance)
+- 위 그림처럼 L2는 두 개의 벡터의 각 원소를 빼고, 제곱을 하고, 합치고, 루트를 씌운 것이다. 예를 들면, x=(1,2,3), y=(-1,2,4) 라면 d(x,y)=root(4+0+1) = root(5)이다. 두개 벡터(점) 사이의 직선 거리를 말한다.
+
+![image](https://user-images.githubusercontent.com/93111772/183003206-e2dc833b-e03e-45c0-99af-0cbf8103f4ad.png)
+### L1 Norm 과 L2 Norm의 직관적 차이
+- 두 개의 검은점(벡터)를 잇는 여러 선들이 존재한다. 벡터 사이의 거리를 재는 서로 다른 Norm을 표기한 셈이다. 초록색선이 L2이고 나머지는 다른 경로이지만 사실 모두 같은 L1 Norm 이다. 시각적 특성 때문에 Taxicab geometry 라고 불린다.
+
+### L1 Loss
+- 두 개의 벡터가 들어가는 자리에 실제 타겟값(y_true)와 예측 타겟값(y_pred)가 들어가 있다.
+- Least Absolute Deviations(LAD), Least Absolute Errors(LAE), Least Absolute Value(LAV), Least Absolute Residual(LAR) 등으로도 불린다.
+- L1 Loss는 L2 Loss에 비해 이상치(Outlier)의 영향을 덜 받는, Robust한 특성을 가지고, 0에서 미분이 불가능하다.
+![image](https://user-images.githubusercontent.com/93111772/183003720-3506e45b-2dc8-4fef-81d7-85e50db60bb5.png)
+
+### L2 Loss
+- L2 Loss도 다르지 않다. 다만 최종적으로 루트를 취하지 않는다는 차이가 있다.
+- Least Squares Error(LSE, 최소자승법)dmfheh qnfflsek.
+- 두 개 값의 절대값을 계산하던 L1 Loss와 달리 L2 Loss는 제곱을 취하기때문에, 이상치가 들어오면 오차가 제곱이 되어 이상치에 더 영향을 받는다.
+- 따라서 이상치가 있는 경우에는 적용하기 어려운 부분이 있다.
+
+Reference : https://junklee.tistory.com/29
+
