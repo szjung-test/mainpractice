@@ -539,3 +539,11 @@ Reference : https://junklee.tistory.com/29
     -  3. 구조(Structure) : 픽셀들의 상대적 위치가 만들어내는 성질
     ![image](https://user-images.githubusercontent.com/93111772/183329443-fe7a3d6a-10e8-4de9-919d-23b9a5b88b48.png)
 
+##### AVIF
+- 2019년도 출시, AVIF는 AV1 비디오 코덱을 통해 인코딩된 I-프레임을 그대로 이미지로 사용할 수 있도록 AOMedia에서 별도의 이미지 컨테이너로 개발됨
+- 자유소프트웨어 관점에서는 WebP의 후계자 격, HEIF(+H.265)에 맞서는 대항마의 성격을 지님
+
+##### WebP
+- 2010년 구글에서 만든 이미지 포맷, Web을 위해서 만들어진 효율적인 이미지 포맷
+- 기존 이미지 포맷이 비손실 압축(GIF, PNG), 손실압축(JPEG) 으로 나눠져 있었는데 WebP는 둘 다 지원
+ 
