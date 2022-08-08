@@ -225,7 +225,7 @@ Merge 머지
      - GRU : RNN 을 포함하는 신경망, 파이토치의 nn.Module 상속 받음
 
 - RNN은 입력이 너무 길어지면 gradient explosion, vanishing gradient 발생
-- 은닉벡터 정의 : __init__state()
+- 은닉벡터 정의 : ``` __init__state() ```
 - forward 함수 정의 : self.gru(배치사이즈, 입력 x 길이, 숨겨진 차원) 3d 텐서
 - train, evaluate
 
