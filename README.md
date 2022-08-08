@@ -516,9 +516,26 @@ Reference : https://junklee.tistory.com/29
 - ML:Regression이나 DNN에서 많이 사용하는 loss function이다. 
 - 이미지들 간의 비교에서 pixel-wise 로 비교한다.
 - 많은 iteration을 통해 parameter를 estimated value에 가깝게 만드는 것을 목적으로 사용
+
 ##### PSNR
+![image](https://user-images.githubusercontent.com/93111772/183329478-17f14ed9-1019-4529-9726-8e2add3aad96.png)
+![image](https://user-images.githubusercontent.com/93111772/183329523-d9362390-93af-4513-be7b-281bc2ec4091.png)
+
 - 영상이나 동영상 손실로 인하여 화질 손실 정보를 평가할 때 사용
 - MSE를 이용하여 계산할 수 있으니 MSE를 사용할 때 기준으로 많이 사용
 - 단위 : dB이고, MSE가 적을수록 PSNR이 높다.
 - MSE가 작다는 것은 원본과 매우 가깝다 혹은 원본으로 판독될 정도이다라고 해석하면 되고 의미가 결과론적으로 PSNR이 높다라고 해석 가능
 - 그러나 MSE는 high texture details에 대한 손실 복원은 어렵기 때문에 MSE가 작아 PSNR이 높은 것이 꼭 고해상도를 의미하지는 않음
+
+##### SSIM
+- 이미지품질 평가를 하기 위해 사용하는 방법으로 시각적 화질 차이 및 유사도 평가 위해 고안
+- 이미지의 Luminance(l), Contrast(c), Structure(s)를 비교하는데 그에 대한 결과를 아래 식으로 나타 낼 수 있음
+- 이론
+    -  두 개의 이미지(image) 또는 윈도우(window) x와 y를 비교하는 상황
+    -  1. 휘도(Luminance) : 빛의 밝기를 나타내는 양
+    ![image](https://user-images.githubusercontent.com/93111772/183329083-331fda91-9bb3-40a9-a6fe-22a43908c1d9.png)
+    -  2. 대조(Contrast) : 이미지 내에서 빛의 밝기가 극적으로 바뀌는 성질
+    ![image](https://user-images.githubusercontent.com/93111772/183329361-27dd7817-9c48-4a2c-8eb8-95ec47e86990.png)
+    -  3. 구조(Structure) : 픽셀들의 상대적 위치가 만들어내는 성질
+    ![image](https://user-images.githubusercontent.com/93111772/183329443-fe7a3d6a-10e8-4de9-919d-23b9a5b88b48.png)
+
