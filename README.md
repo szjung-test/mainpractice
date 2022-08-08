@@ -509,3 +509,16 @@ import this
 
 Reference : https://junklee.tistory.com/29
 
+### 8월 8일
+- Super Resolution 관련 논문을 읽다보면 PSNR과 SSIM 가 나온다.
+##### MSE
+- estimated value(예측값), 알지못하는 parameter 간 차이를 제곱 합 평균을 낸 것이다.
+- ML:Regression이나 DNN에서 많이 사용하는 loss function이다. 
+- 이미지들 간의 비교에서 pixel-wise 로 비교한다.
+- 많은 iteration을 통해 parameter를 estimated value에 가깝게 만드는 것을 목적으로 사용
+##### PSNR
+- 영상이나 동영상 손실로 인하여 화질 손실 정보를 평가할 때 사용
+- MSE를 이용하여 계산할 수 있으니 MSE를 사용할 때 기준으로 많이 사용
+- 단위 : dB이고, MSE가 적을수록 PSNR이 높다.
+- MSE가 작다는 것은 원본과 매우 가깝다 혹은 원본으로 판독될 정도이다라고 해석하면 되고 의미가 결과론적으로 PSNR이 높다라고 해석 가능
+- 그러나 MSE는 high texture details에 대한 손실 복원은 어렵기 때문에 MSE가 작아 PSNR이 높은 것이 꼭 고해상도를 의미하지는 않음
