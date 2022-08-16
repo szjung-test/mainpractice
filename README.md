@@ -547,3 +547,89 @@ Reference : https://junklee.tistory.com/29
 - 2010년 구글에서 만든 이미지 포맷, Web을 위해서 만들어진 효율적인 이미지 포맷
 - 기존 이미지 포맷이 비손실 압축(GIF, PNG), 손실압축(JPEG) 으로 나눠져 있었는데 WebP는 둘 다 지원
  
+#### 파이토치 버전이 안맞아서 실행이 안되는 문제일때 해결하는 방법
+```
+jung@esp:/workspace/newworld/Processing/ja-ma/iccv19_attribute$ python main.py --approach=inception_iccv --experiment=foottraffic --batch_size 16 --print_freq 1
+/home/jung/.local/lib/python3.8/site-packages/torchvision/io/image.py:13: UserWarning: Failed to load image Python extension: libtorch_cuda_cu.so: cannot open shared object file: No such file or directory
+  warn(f"Failed to load image Python extension: {e}")
+```
+- 기존 컨테이너에 깔려있는 파이토치 버전이 안맞아서 실행이 안되었다.
+
+```
+/home/jung/.local/lib/python3.8/site-packages/torch/cuda/__init__.py:146: UserWarning: 
+NVIDIA GeForce RTX 3090 with CUDA capability sm_86 is not compatible with the current PyTorch installation.
+The current PyTorch install supports CUDA capabilities sm_37 sm_50 sm_60 sm_70.
+If you want to use the NVIDIA GeForce RTX 3090 GPU with PyTorch, please check the instructions at https://pytorch.org/get-started/locally/
+
+  warnings.warn(incompatible_device_warn.format(device_name, capability, " ".join(arch_list), device_name))
+
+Learning Rate: 0.0001
+```
+
+```
+jung@esp:/workspace/newworld/Processing/ja-ma/iccv19_attribute$ nvidia-smi
+Tue Aug 16 02:25:52 2022       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 510.68.02    Driver Version: 510.68.02    CUDA Version: 11.6     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  NVIDIA GeForce ...  On   | 00000000:28:00.0 Off |                  N/A |
+| 30%   29C    P8    30W / 350W |      2MiB / 24576MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   1  NVIDIA GeForce ...  On   | 00000000:43:00.0 Off |                  N/A |
+| 30%   30C    P8    19W / 350W |      2MiB / 24576MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   2  NVIDIA GeForce ...  On   | 00000000:A4:00.0 Off |                  N/A |
+| 94%   84C    P2   336W / 350W |  17587MiB / 24576MiB |    100%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   3  NVIDIA GeForce ...  On   | 00000000:C3:00.0 Off |                  N/A |
+| 30%   27C    P8    19W / 350W |  12887MiB / 24576MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
++-----------------------------------------------------------------------------+
+```
+- 내 컨테이너에 깔려있는 파이썬 버전을 확인해본다.
+```
+jung@esp:/workspace/newworld/Processing/ja-ma/iccv19_attribute$ python
+Python 3.8.10 (default, Mar 15 2022, 12:22:08) 
+[GCC 9.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+torch>>> torch.__version__
+'1.12.1+cu102'
+```
+- 확인해보니 torch 버전이 달랐다....
+### 10.2 버전의 파이토치를 삭제
+
+```
+jung@esp:/workspace/newworld/Processing/ja-ma/iccv19_attribute$ pip3 uninstall torch torchvision torchaudio
+```
+
+### CUDA11.6 버전 설치
+```
+pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
+```
+
+### 파이썬 설치 정보 다시 확인
+```
+$ python
+>>> import torch
+>>> torch.__version__
+'1.12.1+cu116'
+```
+
+
+
+
