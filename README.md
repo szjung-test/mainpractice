@@ -14,7 +14,7 @@ git push -u origin master
 
 2. 다시 내가 만들고 싶은 컨테이너 생성하기(
     ```bash
-    #[만들고자하는 컨테이너] 설정을 Makefile에서 해주고 실행
+    # cd newworld #[만들고자하는 컨테이너] 설정을 Makefile에서 해주고 실행
     $ make build
     $ make run
     ```
