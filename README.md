@@ -12,11 +12,11 @@ git push -u origin master
     $ make rmi
     ```
 
-2. 다시 내가 만들고 싶은 컨테이너 생성하기
+2. 다시 내가 만들고 싶은 컨테이너 생성하기(
     ```bash
-    $ cd newworld #[만들고자하는 컨테이너]
+    #[만들고자하는 컨테이너] 설정을 Makefile에서 해주고 실행
     $ make build
-    $ make make run
+    $ make run
     ```
 
 3. Dockerfile 들어가서 추가하고 싶은 apt 설치하기
