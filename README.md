@@ -644,5 +644,6 @@ cp -r a /test/b
 https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html
 - 이손실함수는 sigmoid 레이어와 BCELoss를 하나의 단일 클래스로 결합합니다.
 - 이 연산을 하나의 레이어로 결합하여 수피적 안정성을 위해 log sum exp 트릭을 이용하기 때문에 일반 sigmoid 다음에 BCELoss를 사용하는것보다 수치적으로 더 안정적이다.
-- 
-
+- PAR 논문의 백본은 ```google inception v2``` 인데 이 논문에서는 batch normalization을 통해 bninceptionNet을 백본으로 사용한다.
+- https://sh-tsang.medium.com/review-batch-normalization-inception-v2-bn-inception-the-2nd-to-surpass-human-level-18e2d0f56651
+- GoogleNet부터 차근차근 다 읽어봐야함
