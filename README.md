@@ -638,5 +638,9 @@ cp -r 원본 폴더 /목적지 폴더
 cp -r a /test/b
 ```
 
+### 8월 22일
+- Weighted_BCELoss was proposed in "Multi-attribute learning for pedestrian attribute recognition in surveillance scenarios"[13].
+- Weighted_BCELoss 는 "다중속성학습"을 감시 시나리오에서 적용함
+https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html
 
 
