@@ -647,3 +647,8 @@ https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html
 - PAR 논문의 백본은 ```google inception v2``` 인데 이 논문에서는 batch normalization을 통해 bninceptionNet을 백본으로 사용한다.
 - https://sh-tsang.medium.com/review-batch-normalization-inception-v2-bn-inception-the-2nd-to-surpass-human-level-18e2d0f56651
 - GoogleNet부터 차근차근 다 읽어봐야함
+
+### 8월 23일
+```
+CUDA_VISIBLE_DEVICES=2 python main.py --approach=inception_iccv --experiment=foottraffic --batch_size 8 --print_freq 100
+```
