@@ -663,4 +663,34 @@ CUDA_VISIBLE_DEVICES=2 python main.py --approach=inception_iccv --experiment=foo
 - Loss = d - y
 - Loss 계산하는 방법
     - Error Function(=Loss function)
-    - 이진분류 = BCELoss(Binary Cross Entropy Loss) 
+    - 이진분류 = BCELoss(Binary Cross Entropy Loss)
+
+- 이진분류란?
+    - 데이터가 주어졌을 때, 해당 데이터를 두 가지 정답 중 하나로 분류하는 것 의미
+        - 예로 홍길동이라는 데이터가 주어졌을때,
+        - 해당 데이터가 사람이냐 아니냐에 대한 정답이 1과 0 중 하나하면, 해당 데이터가 1일 확률이 출력되고, 해당 확률이 0.5이상이면, 1로 판단하게 된다. 
+        ![image](https://user-images.githubusercontent.com/93111772/186371644-496e9c15-d512-486d-8f5a-69a73ca9acd9.png)
+        - binary cross entropy loss 수식에서 y hat은 0과 1 사이의 연속적인 시그모이드 함수 출력값을 의미하며, y는 불연속적인 실제값을 의미
+        ![image](https://user-images.githubusercontent.com/93111772/186371942-d6d6111a-b714-49e7-bf43-4973354a5614.png)
+
+- 멀티 이진 분류
+    - 만약 질문 항목이 여러개이며, 각 항목의 대한 정답이 두 가지라면 이를 멀티 이진 분류하고 한다.
+        - 예로 홍길동이라는 데이터가 주어질때,
+        - 첫 번째 질문 항목은 사람이냐 아니냐, 두번째 질문항목은 서울에 사느냐, 살지 않느냐로 해당 데이터를 분류할 수 있다.
+        ![image](https://user-images.githubusercontent.com/93111772/186372361-0c1de7d6-774b-4144-8b91-f1ef9a83e350.png)
+- 다중 분류
+    - 만약 데이터가 주어졌을 때, 질문 항목은 1개이지만, 해당 항목에 대한 정답은 세가지 이상이라면, 이를 다중 분류라고 한다.
+        - 예로 홍길동이라는 데이터가 주어질때,
+        - 해당 데이터를 키가 크냐, 중간이냐, 작은지로 분류할 수 있다.
+    - 이때는 어쩔 수 없이 sigmoid 함수가 아닌 softmax 함수가 필요하다.
+    - 만약, 질문 항목이 n 개이며, 각 항목에 대한 정답이 세가지 이상이라면, 각 질문에 대해 각각 softmax함수를 적용해, 아래 그림과 같은 모델 구조를 가지게 되며, 여러 항목에 대한 다중 분류 작업을 수행할 수 있다.
+    ![image](https://user-images.githubusercontent.com/93111772/186373224-feee03d1-1aea-471a-8e06-ec02a6552a7e.png)
+
+- 예측값이 단일 항목으로 이루어져있다면 (ex, [0.5])
+    - 단순 이진 분류이므로, 목적함수로 Binary Cross Entropy 를 사용
+- 예측값이 여러개의 항목으로 이루어져있으며, 각 항목의 확률 합이 1 이 넘어간다면 (ex, [0.7, 0.6, 0.4])
+    - 멀티 이진 분류이므로, 목적함수로 Binary Cross Entropy 를 사용
+- 예측값이 여러개의 항목으로 이루어져있으며, 각 항목의 확률 합이 1 이라면 (ex, [0.5, 0.2, 0.3])
+    - 다중 분류이므로, 목적함수로 Cross Entropy 를 사용
+
+reference : https://wooono.tistory.com/387
