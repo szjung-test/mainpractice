@@ -652,3 +652,15 @@ https://pytorch.org/docs/stable/generated/torch.nn.BCEWithLogitsLoss.html
 ```
 CUDA_VISIBLE_DEVICES=2 python main.py --approach=inception_iccv --experiment=foottraffic --batch_size 8 --print_freq 100
 ```
+
+### 8월 24일
+- 지금 현재 돌리는 모델 : 지도 학습 (Dataset = Data + label)
+- 구해야하는 output : loss에 들어가는 라벨 키값과 파라미터값을 csv로 만든다.
+- Loss 란 : 모델의 예측이 라벨과 얼마나 차이가 나는지 측정
+- Input(입력)=x, Output(출력)=y, Label(실제정답)=d
+- 내가 가지고 있는 값 = x, d
+- y = W(weight)*x + b(bias)
+- Loss = d - y
+- Loss 계산하는 방법
+    - Error Function(=Loss function)
+    - 이진분류 = BCELoss(Binary Cross Entropy Loss) 
