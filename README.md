@@ -3,6 +3,15 @@ git push -u origin master
 - set upstram for git pull/status
 - 기능 확인 하는 법 git push -help
 
+### SSH(Secure Shell Protocol)
+- 파워쉘을 통한 ssh 접속 방법
+```bash
+#default 22번 포트
+ssh username@1.1.1.1
+```
+- ssh [접속할 username]@[서버주소] -p [ssh포트번호]
+
+
 6월 9일 오전 배운 내용
 - dorker 생성과 삭제는 docker 서버인 SSH에서 해준다!
 
