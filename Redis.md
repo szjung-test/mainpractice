@@ -42,3 +42,13 @@
     - 시간이라는 정보는 계속 바뀌지만 해당 시간이라는 정보는 바뀌지 않음
     - 호출 횟수만 저장하면 된다.
 
+# Host Metrics
+- redis CPU 사용률
+- 메모리 사용량(Free Memory)
+- Network In/Out Size
+- Disk Usage
+
+# Redis 장애 원인
+- Redis는 main thread 가 대부분의 처리를 하는 single threaded 형태이기 때문에, 하나의 명령에서 시간이 많이 걸리면 전체 성능 저하가 일어난다.
+- 실제로 더 빠른 CPU, 더 많은 메모리를 달수록 좋아지지만 scale up을 하더라도, 잘못된 사용 패턴은 장애를 일으킬 수 있다.
+- 메모리, 설정, 싱글스레드
