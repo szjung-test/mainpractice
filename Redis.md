@@ -13,7 +13,22 @@
     - 기본적인 hash table을 이용한다.
   - List
   - Set
+    - 유일한 값들만 있는 집합을 유지하는 자료구조
+    - 중복 불가
+    - 특정 그룹을 저장할 때 사용할 수 있음
   - Hash
   - Sorted set(Ranking)
 
 - Hash table
+
+
+- Cache = 재요청이 오면 재계산 없이 바로 결과를 돌려주는 것
+- 사용 예) 
+- API 응답 cache 
+  - 피드가 추가될 때(Redis 에 저장) - sorted set
+  - 피드를 가져올 때
+ - Access Token
+  - 서비스에서 매번 로그인을 하는 것을 피하기 위해서 Access Token(유효기간 존재)을 사용한다.
+  - 보통은 access token에 대응하는 유저 정보가 DB에 존재함
+  - JWT의 경우에는 해당 키가 유용한지 여부만 저장하고, 실제 유저 정보는 JWT안에 저장하는 경우가 많음
+  - value는 어떻게 정의되어야할까? - User정보: User ID, User 권한, 토큰의 유효기간
