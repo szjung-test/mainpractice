@@ -11,6 +11,28 @@ ssh username@1.1.1.1
 ```
 - ssh [접속할 username]@[서버주소] -p [ssh포트번호]
 
+### SCP(Secure Copy)
+SCP는 SSH 프로토콜을 기반으로 파일을 전송하는 프로토콜(SSH 포트 사용)
+파일 전송만 허용하는 프로토콜
+
+- 로컬 -> 원격 파일 전송
+- SCP [접속할 username]@[서버주소]:[파일경로][저장할 경로]
+```bash
+# 윈도우 -> 리눅스
+scp C:\Users\user\test.txt username@1.1.1.1:/tmp/
+
+# 리눅스 -> 윈도우
+scp username@1.1.1.1:/tmp/test.txt C:\Users\user
+
+# 포트 설정
+scp -P 10022 username@1.1.1.1:/tmp/test.txt C:\Users\user\
+
+# 디렉터리 단위 전송
+scp -r username@1.1.1.1:/tmp/test C:\Users\user\
+
+# 디렉터리 내 모든파일 전송
+scp username@1.1.1.1:/tmp/* C:\Users\user\
+```
 
 6월 9일 오전 배운 내용
 - dorker 생성과 삭제는 docker 서버인 SSH에서 해준다!
