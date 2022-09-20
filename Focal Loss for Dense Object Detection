@@ -2,6 +2,10 @@ https://github.com/facebookresearch/Detectron.
 
 - Focal Loss for Dense Object Detection 논문 리딩
 - Tsung-Yi Lin Priya Goyal Ross Girshick Kaiming He Piotr Dolla ́r Facebook AI Research (FAIR)
+
+- Focal Loss 는 one-stage detector 정확도 성능을 개선하기 위해 고안
+- 만들게된 이유: one-stage detector는 two-stage detector에 비해 학습 중 클래스 불균형 문제가 심하다.
+
 criterion = 기준
 imbalance = 불균형
 encountered = 맞닥뜨리다
@@ -11,3 +15,9 @@ classification
   - R-CNN 계열 : two-stage detector
   - YOLO, SSD 계열 : one-stage detector
 
+클래스 불균형 문제의 원인
+1. 대부분의 location은 학습에 기여하지 않는 easy negative (detector에 의해 background로 쉽게 분류될 수 있음)
+2. easy negative 각각은 높은 확률로 객체가 아님을 잘 구분할 수 있다. 각각의 loss값은 작다. 하지만 비율이 굉장히 크므로 전체 loss 및 gradient를 계산할 때, easy negative의 영향이 압도적으로 커지는 문제 발생
+
+cross entropy loss 문제점
+- 잘 분류한 경우보다 잘못 예측한 경우에 대하여 페널티를 부여하는것에 초점
