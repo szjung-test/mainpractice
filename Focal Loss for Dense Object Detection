@@ -1,0 +1,13 @@
+https://github.com/facebookresearch/Detectron.
+
+- Focal Loss for Dense Object Detection 논문 리딩
+- Tsung-Yi Lin Priya Goyal Ross Girshick Kaiming He Piotr Dolla ́r Facebook AI Research (FAIR)
+criterion = 기준
+imbalance = 불균형
+encountered = 맞닥뜨리다
+Focal Loss = focuses training on a sparse set of hard examples and prevents 
+
+classification 
+  - R-CNN 계열 : two-stage detector
+  - YOLO, SSD 계열 : one-stage detector
+
