@@ -21,3 +21,27 @@ classification
 
 cross entropy loss 문제점
 - 잘 분류한 경우보다 잘못 예측한 경우에 대하여 페널티를 부여하는것에 초점
+
+detector = 백본(Backbone) + 헤드(Head)
+백본은 입력 이미지를 feature map으로 변형 ex) ImageNet 데이터셋으로 pre-trained 시킨 VGG16, ResNet-50
+헤드는 백본에서 추출한 feature map의 location 작업을 수행하는 부분
+헤드에서 predict classes와 bounding boxes 작업이 수행
+
+헤드는 크게 Dense prediction, Sparse prediction으로 나뉨
+이는 Object Detection의 종류인 1-stage, 2-stage 인지 결정됨
+sparse prediction 헤드를 사용하는 2-stage, ex) Faster R-CNN, R-FCN
+predict classes와 Bounding Box Regression 부분이 분리되어 있다.
+
+Dense prediction 헤드를 사용하는 1-stage, YOLO, SSD
+predict classes와 Bounding Box Regression 통합되어 있다.
+
+Neck(넥)은 Backbone과 Head를 연결하는 부분으로 feature map을 refinement(정제), reconfiguration(재구성) 한다.
+대표적으로 FPN(Feature Pyramid Network), PAN(Path Aggregation Network), BiFPN, NAS-FPN 등 이 있다.
+
+- Bag of Freebies(BOF)
+BOF는 inference cost 변화 없이 성능향상을 할 수 있는 딥러닝 기법
+데이터 증강(CutMix, Mosaic 등), BBox(Bounding Box) Regression의 loss 함수(IOU loss, CIOU loss 등)
+- Bag of Specials(BOS)
+BOS는 BOF의 반대로, inference cost가 조금 상승하지만, 성능이 향상 되는 딥러닝 기법
+enhance receptive filed(SPP, ASPP, RFB), feature integration(skip-connection, hyper-column, Bi-FPN)
+최적의 activation function(P-ReLU, ReLU6, Mish)
