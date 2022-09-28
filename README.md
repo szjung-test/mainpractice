@@ -1,6 +1,7 @@
 init.py 란
 - 폴더(디렉터리)가 패키지로 인식되도록 하는 역할도 있고, 이름 그대로 패키지를 초기화하는 역할을 한다.
-git push -u origin master
+
+```git push -u origin master```
 
 - set upstram for git pull/status
 - 기능 확인 하는 법 git push -help
