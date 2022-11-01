@@ -1,4 +1,43 @@
-init.py 란
+### FTP를 통해 파일을 전송
+- curl로 보호된 FTP 서버에 액세스하려면 -u 옵션을 사용하고 아래 그림과 같이 사용자 이름과 암호를 지정합니다.
+```
+curl -u FTP_USERNAME:FTP_PASSWORD ftp://ftp.example.com/
+```
+
+ 
+
+- 로그인하면 사용자의 홈 디렉토리에 있는 모든 파일과 디렉터리가 나열됩니다.
+
+- 다음 구문을 사용하여 FTP 서버에서 단일 파일을 다운로드할 수 있습니다.
+```
+curl -u FTP_USERNAME:FTP_PASSWORD ftp://ftp.example.com/file.tar.gz
+```
+
+ 
+
+- 파일을 FTP 서버에 업로드하려면 업로드할 파일 이름 뒤에 -T를 사용합니다.
+```
+curl -T newfile.tar.gz -u FTP_USERNAME:FTP_PASSWORD ftp://ftp.example.com/
+``` 
+
+### 쿠키를 보내기
+- 원격 리소스에 액세스하거나 문제를 디버깅하기 위해 특정 쿠키를 사용하여 HTTP 요청을 해야 하는 경우도 있습니다.
+
+- 기본적으로 Curl이 있는 리소스를 요청할 때 쿠키는 전송되거나 저장되지 않습니다.
+
+- 서버로 쿠키를 보내려면 <b>-b</b> 스위치 다음에 쿠키 또는 문자열이 들어 있는 파일 이름을 사용합니다.
+
+- 예를 들어 Oracle Java JDK rpm 파일 jdk-10.0.2_192-x64_bin.rpm을 다운로드합니다. 값을 가진 oraclelicense라는 쿠키를 전달해야 합니다.
+```
+curl -L -b "oraclelicense=a" -O http://download.oracle.com/otn-pub/java/jdk/10.0.2+13/19aef61b38124481863b1413dce1855f/jdk-10.0.2_linux-x64_bin.rpm
+```
+- 프록시 서버에 인증이 필요한 경우 -U(--proxy-user) 옵션을 사용하고 사용자 이름과 암호를 콜론(user:password)으로 구분합니다.
+```
+curl -U username:password -x 192.168.44.1:8888 http://linux.com/
+```
+reference : https://jjeongil.tistory.com/1313
+
+### init.py 란
 - 폴더(디렉터리)가 패키지로 인식되도록 하는 역할도 있고, 이름 그대로 패키지를 초기화하는 역할을 한다.
 
 ```git push -u origin master```
