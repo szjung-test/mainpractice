@@ -1,3 +1,6 @@
+### @staticmethod와 @classmethod 차이
+https://dongwooklee96.github.io/post/2021/03/03/%ED%8C%8C%EC%9D%B4%EC%8D%AC-classmethod%EC%99%80-staticmethod-%EC%B0%A8%EC%9D%B4/
+
 ### FTP를 통해 파일을 전송
 - curl로 보호된 FTP 서버에 액세스하려면 -u 옵션을 사용하고 아래 그림과 같이 사용자 이름과 암호를 지정합니다.
 ```
