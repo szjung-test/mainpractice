@@ -1,5 +1,5 @@
 ### docker-compose 이용해서 mysql 쉽게 사용하기 Very nice
-출처: ```https://codegear.tistory.com/66```
+출처: https://codegear.tistory.com/66
 - 프로젝트 루트 폴더에 docker-compose.yml 생성
 ```
 docker-compose up -d
