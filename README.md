@@ -1,3 +1,12 @@
+### docker-compose 이용해서 mysql 쉽게 사용하기 Very nice
+출처: ```https://codegear.tistory.com/66```
+- 프로젝트 루트 폴더에 docker-compose.yml 생성
+```
+docker-compose up -d
+```
+
+
+
 ### @staticmethod와 @classmethod 차이
 https://dongwooklee96.github.io/post/2021/03/03/%ED%8C%8C%EC%9D%B4%EC%8D%AC-classmethod%EC%99%80-staticmethod-%EC%B0%A8%EC%9D%B4/
 
